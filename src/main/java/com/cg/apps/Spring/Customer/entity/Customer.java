@@ -1,9 +1,17 @@
 package com.cg.apps.Spring.Customer.entity;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+//import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import com.cg.apps.Spring.Items.entity.Item;
 
 @Entity
 public class Customer {
@@ -14,6 +22,9 @@ public class Customer {
 
 	@OneToOne
 	Account account;
+	
+	//@ManyToOne(fetch = FetchType.EAGER)
+	//private Set<Item> boughtItems;
 
 	public Customer() {
 	}
