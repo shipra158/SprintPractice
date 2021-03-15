@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.cg.apps.Spring.Customer.entity.Customer;
@@ -17,8 +18,8 @@ public class Item {
 	private String description;
 	private LocalDateTime addedDate;
 	
-	//@OneToMany
-	//private Customer boughtBy;
+	@ManyToOne
+	private Customer boughtBy;
 	 
 
 	public Item() {
@@ -65,13 +66,13 @@ public class Item {
 		this.description = description;
 	}
 
-	// public Customer getBoughtBy() {
-	// return boughtBy;
-	// }
+	 public Customer getBoughtBy() {
+	 return boughtBy;
+	 }
 
-	// public void setBoughtBy(Customer boughtBy) {
-	// this.boughtBy = boughtBy;
-	// }
+	 public void setBoughtBy(Customer boughtBy) {
+	 this.boughtBy = boughtBy;
+	 }
 
 	public LocalDateTime getAddedDate() {
 		return addedDate;

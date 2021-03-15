@@ -1,6 +1,6 @@
 package com.cg.apps.Spring.Customer.entity;
 
-import java.util.Set;
+import java.util.*;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 //import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -17,14 +18,14 @@ import com.cg.apps.Spring.Items.entity.Item;
 public class Customer {
 	@GeneratedValue
 	@Id
-	long id;
-	String name;
+private	long id;
+private	String name;
 
 	@OneToOne
-	Account account;
-	
-	//@ManyToOne(fetch = FetchType.EAGER)
-	//private Set<Item> boughtItems;
+private	Account account;
+
+	@OneToMany(fetch = FetchType.EAGER)
+private	Set<Item> boughtItems;
 
 	public Customer() {
 	}
@@ -58,6 +59,13 @@ public class Customer {
 		this.account = account;
 	}
 
+	public Set<Item> getBoughtItems() {
+		return boughtItems;
+	}
+
+	public void setBoughtItems(Set<Item> boughtItems) {
+		this.boughtItems = boughtItems;
+	}
 
 	@Override
 	public String toString() {

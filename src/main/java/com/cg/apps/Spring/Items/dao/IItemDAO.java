@@ -1,5 +1,6 @@
 package com.cg.apps.Spring.Items.dao;
 
+import com.cg.apps.Spring.Customer.entity.Customer;
 import com.cg.apps.Spring.Items.entity.Item;
 
 public interface IItemDAO {
@@ -7,6 +8,7 @@ public interface IItemDAO {
 	Item add(Item item);
 	Item update(Item item);
 	Item findById(String itemId);
+
 	
 	
 	
